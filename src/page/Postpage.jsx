@@ -13,7 +13,7 @@ const Postpage = () => {
     async function backend(){
      // const res = await axios.get(`${import.meta.env.VITE__URL}/posts`,{});
      const res = await axios.get('https://blog-backend-45la.onrender.com/posts');
-     console.log(res.data.array);
+     console.log(res);
       if(res.statusText=="OK"){
          setloader(false);
          setposts(res.data.array);

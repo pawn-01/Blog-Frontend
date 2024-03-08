@@ -14,7 +14,7 @@ const Login = () => {
 
   async function register(e){
      e.preventDefault();
-     const res = await axios.post(`https://full-stack-mern-blog-itv8.onrender.com/login`,{
+     const res = await axios.post(`https://blog-backend-45la.onrender.com/login`,{
         username,
         password
      },{withCredentials:true})

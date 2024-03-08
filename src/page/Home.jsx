@@ -30,7 +30,7 @@ const Home = () => {
   }, [])
 
   async function logout(){
-     const res = await axios.post(`${import.meta.env.VITE__URL}/logout`,{},{withCredentials:true});
+     const res = await axios.post(`https://blog-backend-45la.onrender.com/logout`,{},{withCredentials:true});
      if(res.statusText==='OK'){
         setusername(null);
         return <Navigate to='/login' />

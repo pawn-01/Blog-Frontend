@@ -14,7 +14,7 @@ const Postviewpage = () => {
 
     useEffect(() => {
        async function apicall(){
-           const res = await axios.get(`${import.meta.env.VITE__URL}/posts/${id}`) 
+           const res = await axios.get(`https://blog-backend-45la.onrender.com/posts/${id}`) 
            if(res.statusText=="OK"){
                 setpostinfo(res.data.postdoc);
            }
@@ -36,7 +36,7 @@ const Postviewpage = () => {
     }
     
     async function deletepost(){
-       const res = await axios.delete(`${import.meta.env.VITE__URL}/delete/${id}`,{withCredentials:true});
+       const res = await axios.delete(`https://blog-backend-45la.onrender.com/delete/${id}`,{withCredentials:true});
        console.log(res);
        if(res.statusText=="OK"){
             navi('/');
@@ -66,7 +66,7 @@ const Postviewpage = () => {
         </div>
        )}
       <div className='max-h-[400px] w-[full] overflow-hidden flex mb-[20px]'>
-          <img className=" object-cover object-center" src={`${import.meta.env.VITE__URL}/${postinfo.cover}`} alt='image'/>
+          <img className=" object-cover object-center" src={`https://blog-backend-45la.onrender.com/${postinfo.cover}`} alt='image'/>
       </div>
       <div className='leading-normal' dangerouslySetInnerHTML={{__html:postinfo.content}}/>
     </>
