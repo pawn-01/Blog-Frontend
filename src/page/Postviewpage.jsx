@@ -15,7 +15,7 @@ const Postviewpage = () => {
     useEffect(() => {
        async function apicall(){
            const res = await axios.get(`https://blog-backend-45la.onrender.com/posts/${id}`) 
-           if(res.statusText=="OK"){
+           if(res.data.a==1){
                 setpostinfo(res.data.postdoc);
            }
        }
