@@ -14,7 +14,7 @@ const Register = () => {
         password
      })
      console.log(res.statusText);
-     if(res.statusText==='OK'){
+     if(res.data.a==1){
        setredirect(true);
      }
      console.log(res);

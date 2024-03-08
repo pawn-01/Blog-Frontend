@@ -19,7 +19,7 @@ const Login = () => {
         password
      },{withCredentials:true})
      console.log(res);
-     if(res.statusText==='OK'){
+     if(res.data.a==1){
          setuser(res.data);
          setredirect(true);
     }

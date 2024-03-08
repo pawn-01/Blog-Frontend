@@ -38,7 +38,7 @@ const Postviewpage = () => {
     async function deletepost(){
        const res = await axios.delete(`https://blog-backend-45la.onrender.com/delete/${id}`,{withCredentials:true});
        console.log(res);
-       if(res.statusText=="OK"){
+       if(res.data.a==1){
             navi('/');
        }
     }

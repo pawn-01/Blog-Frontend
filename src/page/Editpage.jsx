@@ -22,8 +22,8 @@ const Editpage = () => {
 
     useEffect(() => {
       async function postapicall(){
-         const res = await axios.get(`${import.meta.env.VITE__URL}/posts/${id}`);
-         if(res.statusText==="OK"){
+         const res = await axios.get(`https://blog-backend-45la.onrender.com/posts/${id}`);
+         if(res.data.a==1){
              settitle(res.data.postdoc.title);
              setsummary(res.data.postdoc.summary);
              setcontent(res.data.postdoc.content);
@@ -50,9 +50,9 @@ const Editpage = () => {
       data.set('content',content)
       console.log(files);
         e.preventDefault();
-        const res = await axios.put(`${import.meta.env.VITE__URL}/edit/${id}`,data,{withCredentials:true})
-        console.log(res.statusText);
-        if(res.statusText==='OK'){
+        const res = await axios.put(`https://blog-backend-45la.onrender.com/edit/${id}`,data,{withCredentials:true})
+  
+        if(res.data.a==1){
             setredirect(true);
         }
     }
