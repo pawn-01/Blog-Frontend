@@ -14,11 +14,11 @@ const Login = () => {
 
   async function register(e){
      e.preventDefault();
-     const res = await axios.post(`https://blog-backend-45la.onrender.com/login`,{
+     const res = await axios.post(`${import.meta.env.VITE__URL}/login`,{
         username,
         password
      },{withCredentials:true})
-     console.log(res);
+ 
      if(res.data.a==1){
          setuser(res.data);
          setredirect(true);

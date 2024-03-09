@@ -12,7 +12,7 @@ const Postpage = () => {
   useEffect(()=>{
     async function backend(){
      // const res = await axios.get(`${import.meta.env.VITE__URL}/posts`,{});
-     const res = await axios.get('https://blog-backend-45la.onrender.com/posts');
+     const res = await axios.get(`${import.meta.env.VITE__URL}/posts`);
      console.log(res);
       if(res.data.a==1){
          setloader(false);

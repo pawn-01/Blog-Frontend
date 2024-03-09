@@ -13,7 +13,7 @@ const Home = () => {
  
   useEffect(() => {
      async function backend(){
-      const res = await axios.post('https://blog-backend-45la.onrender.com/profile', {},{withCredentials:true});
+      const res = await axios.post(`${import.meta.env.VITE__URL}/profile`, {},{withCredentials:true});
       console.log("home " + typeof res.data.a);
       if(res.data.a==1){
          console.log(res.data.decode);
@@ -30,7 +30,7 @@ const Home = () => {
   }, [])
 
   async function logout(){
-     const res = await axios.post(`https://blog-backend-45la.onrender.com/logout`,{},{withCredentials:true});
+     const res = await axios.post(`${import.meta.env.VITE__URL}/logout`,{},{withCredentials:true});
      if(res.data.a==1){
         setusername(null);
         return <Navigate to='/login' />
